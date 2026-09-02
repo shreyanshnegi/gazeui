@@ -3,6 +3,7 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const db = require('./db')
 const authRoutes = require('./routes/auth')
+const todosRoutes = require('./routes/todos')
 
 dotenv.config()
 
@@ -12,6 +13,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api/auth', authRoutes)
+app.use('/api/todos', todosRoutes)
 
 app.get('/health', (req, res) => {
   res.json({ status: 'Server is running', developer: 'Shreyansh' })
