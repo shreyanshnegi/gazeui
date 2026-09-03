@@ -5,6 +5,7 @@ const db = require('./db')
 const authRoutes = require('./routes/auth')
 const todosRoutes = require('./routes/todos')
 const gazeRoutes = require('./routes/gaze')
+const calibrationRoutes = require('./routes/calibration')
 
 dotenv.config()
 
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use('/api/auth', authRoutes)
 app.use('/api/todos', todosRoutes)
 app.use('/api/gaze', gazeRoutes)
+app.use('/api/calibration', calibrationRoutes)
 
 app.get('/health', (req, res) => {
   res.json({ status: 'Server is running', developer: 'Shreyansh' })
